@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta Tags Obrigatórias -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="<KEY>"
+      crossorigin="anonymous"
+    />
+    <title>Controlador de gastos de agua</title>
+  </head>
+  <body class="container mt-3">
+    <h1 class="text-center mb-4">Controlador de gastos de agua</h1>
+    
+    <!-- Formulário de cadastro de despesa -->
+    <form id="registerForm">
+        <div class="mb-3">
+          <label for="expenseNameInput" class="form-label">Cadastre a despesa :</label>
+          <input type="text" class="form-control" id="expenseNameInput" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="amountInput" class="form-label">Valor (em reais):</label>
+            <input type="number" step=".01" min="0" max="9999999" class="form-control" id="amountInput">
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar Despesa</button>
+    </form>
+    <!-- Tabela para exibição de despesas registradas -->
+    <table class="mt-4 table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome da Despesa</th>
+            <th scope="col">Valor ($)</th>
+          </tr>
+        </thead>
+        <tbody id="expensesTableBody"></tbody>
+    </table>
+    <!-- JavaScript Opcional, escolha um dos dois! -->
+    <!-- Opção 1: Bootstrap Bundle com Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="<KEY>" crossorigin="anonymous"></script>
+    <!-- Opção 2: Popper e Bootstrap JS separados -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="<KEY>" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="<KEY>" crossorigin="anonymous"></script>
+    -->
+    <!-- Script para manipulação do formulário -->
+    <script>
+        // Obter referência para o elemento de formulário
+        const registerForm = document.getElementById("registerForm");
+        
+        registerForm.addEventListener('submit', function(event){
+            
+            event.preventDefault();
+            
+            let expenseNameValue = document.getElementById("expenseNameInput").value;
+            let amountValue = parseFloat(document.getElementById("amountInput").value);
+            if (!isNaN(amountValue)) {
+                
+                let trElement = document.createElement("tr");
+                let tdIndexCell = document.createElement("td");
+                tdIndexCell.innerHTML = "Novo";
+                trElement.appendChild(tdIndexCell);
+                let tdNameCell = document.createElement("td");
+                tdNameCell.innerHTML = expenseNameValue;
+                trElement.appendChild(tdNameCell);
+                let tdAmountCell = document.createElement("td");
+                tdAmountCell.innerHTML = "$" + amountValue.toFixed(2);
+                trElement.appendChild(tdAmountCell);
+                document.getElementById("expensesTableBody").prepend(trElement);
+                
+                document.getElementById("expenseNameInput").value = "";
+                document.getElementById("amountInput").value = "";
+            } else {
+                alert("Por favor, insira um valor numérico válido.");
+            }
+        });
+    </script>
+  </body>
+</html>
