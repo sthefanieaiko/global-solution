@@ -1,70 +1,14 @@
 /* Global Styles */
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box; 
-    font-family: Arial, Helvetica, sans-serif; 
-    font-size: large;
-    color: #6c757d;
-  }
-  a{
-    text-decoration: none;
-    color:#6c757d ;
-  }
-  ul li{
-    list-style-type:none;
-  }
-  p{
-    line-height: normal;
-  }
-  /* Base Styling Classes */
-.section-header {
-    background-color: white;
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-  .section-header h2 {
-    font-weight: bold;
-    margin-top:.5rem;
-    margin-bottom:.5rem;
-  }
-  .action-button {
-    cursor: pointer;
-    padding:.5rem.75rem;
-    background-color: #f8f9fa;
-    border: solid thin lightgray;
-    border-radius:.25rem;
-  }
-  .action-button:hover {
-    background-color: #e2e6ea;
-  }
-  #main-content.card {
-    position: relative;
-    overflow: hidden;
-    border:solid thin gray;
-    border-radius:.25rem;
-  }
-  .card img {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
-  }
-  .card-footer.user {
-    position: absolute;
-    bottom:.5rem;
-    right:.5rem;
-  }
-  .card.post.card-img-overlay.p-3 {
-    top:.5rem!important;
-    left:.5rem!important;
-  }
-  .card.post.card-img-overlay.p-3.rounded {
-    border-radius:.25rem!important;
-  }
-  .card.card-body.username {
-    font-weight:bold;
-    font-size:large;
-  }
-  .card.card-body p {
-    word-break: break-all;
-  }
+.dividir{
+  display: flex;
+  justify-content: space-between;
+}
+
+.form2 {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+}
+#Procurados,#pesquisa_feita { 
+  flex: 1;
+}
