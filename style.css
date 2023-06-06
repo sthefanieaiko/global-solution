@@ -1,0 +1,14 @@
+/* Global Styles */
+.dividir{
+  display: flex;
+  justify-content: space-between;
+}
+
+.form2 {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+}
+#Procurados,#pesquisa_feita { 
+  flex: 1;
+}
