@@ -78,14 +78,18 @@ function criarItem(item, index) {
 
 
     let html = `
-    <td>${item.name}</td>
-    <td>${formatDateMonth(item.date)}</td>
-    <td>${item.amount}L</td>
-    <td>${criarBotao(item)}</td>
+        <div class="card mt-2">
+    <h5 class="card-header">${item.name}</h5>
+    <div class="card-body">
+        <h5 class="card-title">${formatDateMonth(item.date)}</h5>
+        <p class="card-text">${item.amount}L</p>
+        ${criarBotao(item)}
+    </div>
+    </div>
     `;
 
 
-    let tr = document.createElement("tr");
+    let tr = document.createElement("div");
     tr.innerHTML = html;
     return tr;
 }
