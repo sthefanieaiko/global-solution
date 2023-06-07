@@ -148,3 +148,42 @@ html, body {
   background-color: #FFF8DC;
   border-radius:.25rem;
   }
+
+  .pill-wrapper {
+    background-color: transparent;
+  }
+  .pill {
+    background-color: #4376F6;
+    border-radius: 5px;
+    color: white;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+  .pill:nth-child(2) {
+    background-color: #e48e0b;
+  }
+  .pill:nth-child(3) {
+    background-color: #51d6a7;
+  }
+  .pill {
+    align-items: center;
+    font-size: 0.8rem;
+  }
+  .pill__icon {
+    padding-left: 1.5em;
+  }
+  .pill__date {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.7);
+  }
+  .pill__title {
+    padding: 0.2rem 0;
+    font-weight: bold;
+  }
+  .pill__content {
+    padding: 1.5em;
+  }
+  .pill__value {
+    font-size: 1.8em;
+  }
+  
