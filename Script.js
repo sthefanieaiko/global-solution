@@ -1,66 +1,66 @@
-let Nome = document.getElementById("nome");
-let Data = document.getElementById("data");
-let quantidade = document.getElementById("quantidade");
+let name = document.getElementById("name");
+let date = document.getElementById("date");
+let amount = document.getElementById("amount");
 
-var myModal = new bootstrap.Modal(document.getElementById('modelodeexemplo'))
-let listar = document.getElementById("listados");
-let pesquisa_feita = document.getElementById("pesquisa_feita");
-let Procurar = document.getElementById("procurado").addEventListener("keyup", (e) => {
+var myModal = new bootstrap.Modal(document.getElementById('exampleModal'))
+let listagem = document.getElementById("listagem");
+let tipo_pesquisa = document.getElementById("tipo_pesquisa");
+let procurar = document.getElementById("procurar").addEventListener("keyup", (e) => {
     buscarCard(e.target.value);
 });
 
 let dados = JSON.parse(localStorage.getItem("item")) || [];
 
-
+//Renderizar os cards
 dados.forEach((item, index) => {
-    listados.appendChild(Item(item, index));
+    listagem.appendChild(criarItem(item, index));
 });
 
-function save() {
+function salvar() {
 
-    if (nome.value == "" || data.value == "" || quantidade.value == "") {
-        alert("Não deixe nenhum campo sem resposta");
+    if (name.value == "" || date.value == "" || amount.value == "") {
+        alert("Preencha todos os campos");
         return false;
     }
 
     let dateInUse = dados.filter((item) => item.date == date.value);
 
     if (dateInUse.length > 0) {
-        alert("Data registrada");
+        alert("Data já cadastrada");
         return false;
     }
 
 
     dados.push({
         id: dados.length + 1,
-        nome: nome.value,
-        data: data.value,
-        quantidade: quantidade.value,
+        name: name.value,
+        date: date.value,
+        amount: amount.value,
     })
 
-    listados.innerHTML = "";
+    listagem.innerHTML = "";
 
     dados.forEach((item, index) => {
-        listados.appendChild(Item(item, index));
+        listagem.appendChild(criarItem(item, index));
         myModal.hide();
     });
 
     localStorage.setItem("item", JSON.stringify(dados));
 
-    apagarCampos();
+    limparCampos();
 }
 
-function Botao(item) {
+function criarBotao(item) {
     return `<button class="btn btn-danger" onClick="remover(${item.id})">Remover</button>`;
 }
 
-function Card(search) {
-    listados.innerHTML = "";
-    let searchType = pesquisa_feita.value; 
+function buscarCard(search) {
+    listagem.innerHTML = "";
+    let searchType = tipo_pesquisa.value; // Get selected search type
 
     dados.forEach((item, index) => {
         if (item[searchType] && item[searchType].toString().includes(search)) {
-            listar.appendChild(Item(item, index));
+            listagem.appendChild(criarItem(item, index));
         }
     });
 }
@@ -74,14 +74,14 @@ function formatDateMonth(date) {
 
 
 
-function Item(item, index) {
+function criarItem(item, index) {
 
 
     let html = `
     <td>${item.name}</td>
     <td>${formatDateMonth(item.date)}</td>
     <td>${item.amount}L</td>
-    <td>${Botao(item)}</td>
+    <td>${criarBotao(item)}</td>
     `;
 
 
@@ -90,33 +90,33 @@ function Item(item, index) {
     return tr;
 }
 
-function apagarCampos() {
+function limparCampos() {
     name.value = "";
     date.value = "";
     amount.value = "";
 }
 
-function remove(id) {
+function remover(id) {
     dados = dados.filter((item) => item.id != id);
-    listados.innerHTML = "";
+    listagem.innerHTML = "";
 
     dados.forEach((item, index) => {
-        listados.appendChild(Item(item, index));
+        listagem.appendChild(criarItem(item, index));
     });
 
     localStorage.setItem("item", JSON.stringify(dados));
 }
 
-function permitir(id) {
+function aprovar(id) {
     dados = dados.map((item) => {
         if (item.id == id) {
-            item.status = "Permitido";
+            item.status = "Aprovado";
         }
         return item;
     });
-    listados.innerHTML = "";
+    listagem.innerHTML = "";
 
     dados.forEach((item, index) => {
-        listados.appendChild(Item(item, index));
+        listagem.appendChild(criarItem(item, index));
     });
 }
