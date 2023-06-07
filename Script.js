@@ -4,7 +4,7 @@ let amount = document.getElementById("amount");
 
 var myModal = new bootstrap.Modal(document.getElementById('exampleModal'))
 let listagem = document.getElementById("listagem");
-let tipo_pesquisa = document.getElementById("tipo_pesquisa");
+let style_pesquisa = document.getElementById("style_pesquisa");
 let procurar = document.getElementById("procurar").addEventListener("keyup", (e) => {
     buscarCard(e.target.value);
 });
@@ -19,7 +19,7 @@ dados.forEach((item, index) => {
 function salvar() {
 
     if (name.value == "" || date.value == "" || amount.value == "") {
-        alert("Preencha todos os campos");
+        alert("Nâo deixe nenhum campo vazio");
         return false;
     }
 
@@ -56,7 +56,7 @@ function criarBotao(item) {
 
 function buscarCard(search) {
     listagem.innerHTML = "";
-    let searchType = tipo_pesquisa.value; // Get selected search type
+    let searchType = style_pesquisa.value; // Get selected search type
 
     dados.forEach((item, index) => {
         if (item[searchType] && item[searchType].toString().includes(search)) {
