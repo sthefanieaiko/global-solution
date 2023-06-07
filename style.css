@@ -5,51 +5,67 @@ html, body {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
-  color: #6c757d;
+  padding:.5rem.75rem;
+  background-color: #BC8F8F;
+  border: solid thin #800000;
+  border-radius:.25rem;
   }
   
   a{
   text-decoration: none;
-  color:#6c757d ;
+  color:#DAA520 ;
   }
   
   ul li{
   list-style-type:none;
+  padding:.5rem.75rem;
+  background-color: #FFF8DC;
+  border-radius:.25rem;
   }
   
   p{
   line-height: normal;
+  padding:.5rem.75rem;
+  background-color: #FFF8DC;
+  border-radius:.25rem;
   }
   
   /* Base Styling Classes */
   .section-header {
-  background-color: white;
+  background-color: #800000;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 128rem;
   }
   
   .section-header h2 {
   font-weight: bold;
   margin-top:.5rem;
   margin-bottom:.5rem;
+  padding:.5rem.75rem;
+  background-color: #FFF8DC;
+  border: solid thin #800000;
+  border-radius:.25rem;
   }
   
   .action-button {
   cursor: pointer;
   padding:.5rem.75rem;
-  background-color: #f8f9fa;
-  border: solid thin lightgray;
+  background-color: #DAA520;
+  border: solid thin #800000;
   border-radius:.25rem;
   }
   
   .action-button:hover {
-  background-color: #e2e6ea;
+    padding:.5rem.75rem;
+  background-color: #BC8F8F;
+  border: solid thin #800000;
+  border-radius:.25rem;
   }
   
   #main-content.card  {
   position: relative;
   overflow: hidden;
-  border:solid thin gray;
+  border:solid thin #DAA520;
   border-radius:.25rem;
   }
   
@@ -57,43 +73,78 @@ html, body {
   object-fit: cover;
   width: 100%;
   height: auto;
+  padding:.5rem.75rem;
+  background-color: #BC8F8F;
+  border: solid thin #800000;
+  border-radius:.25rem;
   }
   
   .card-footer.user {
   position: absolute;
   bottom:.5rem;
   right:.5rem;
+  padding:.5rem.75rem;
+  background-color: #BC8F8F;
+  border: solid thin #800000;
+  border-radius:.25rem;
   }
   
   .card.post.card-img-overlay.p-3 {
   top:.5rem!important;
   left:.5rem!important;
+  padding:.5rem.75rem;
+  background-color: #BC8F8F;
+  border: solid thin #800000;
+  border-radius:.25rem;
   }
   
   .card.post.card-img-overlay.p-3.rounded {
   border-radius:.25rem!important;
+  padding:.5rem.75rem;
+  background-color: #BC8F8F;
+  border: solid thin #800000;
+  border-radius:.25rem;
   }
   
   .card.card-body.username {
   font-weight:bold;
   font-size:large;
+  padding:.5rem.75rem;
+  background-color: #BC8F8F;
+  border: solid thin #800000;
+  border-radius:.25rem;
   }
   
   .card.card-body p {
   word-break: break-all;
+  padding:.5rem.75rem;
+  background-color: #BC8F8F;
+  border: solid thin #800000;
+  border-radius:.25rem;
   }
   
   .dividir{
   display: flex;
   justify-content: space-between;
+  padding:.5rem.75rem;
+  background-color: #DAA520;
+  border-radius:.25rem;
   }
   
   .form2 {
   display: flex;
   justify-content: center;
   gap: 20px;
+  padding:.5rem.75rem;
+  background-color: #FFF8DC;
+  border: solid thin #BC8F8F;
+  border-radius:.25rem;
+  
   }
   
   #Procurados,#pesquisa_feita {
   flex: 1;
+  padding:.5rem.75rem;
+  background-color: #FFF8DC;
+  border-radius:.25rem;
   }
